@@ -1401,6 +1401,10 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
+typograf@^6.7.2:
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/typograf/-/typograf-6.7.2.tgz#13ec2caa3af0086b99ba1b82fdc6bfb2111ebe77"
+
 unist-util-is@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-is/-/unist-util-is-2.1.2.tgz#1193fa8f2bfbbb82150633f3a8d2eb9a1c1d55db"
