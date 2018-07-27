@@ -1,18 +1,18 @@
-const Typograf = require("typograf");
-const tp = new Typograf({ locale: ["ru"] });
+const Typograf = require('typograf')
 
-const fields = ["description", "lead"];
+exports.onPreExtractQueries = ({ boundActionCreators, getNodes, getNode }, { locale, fields, disableRules }) => {
+  const tp = new Typograf({ locale })
 
-exports.onPreExtractQueries = ({ boundActionCreators, getNodes, getNode }) => {
-  const markdownNodes = getNodes().filter(
-    node => node.internal.type === "MarkdownRemark"
-  );
+  disableRules.forEach(rule => {
+    tp.disableRule(rule)
+  })
+  const markdownNodes = getNodes().filter(node => node.internal.type === 'MarkdownRemark')
   markdownNodes.forEach(node => {
     fields.forEach(f => {
-      const value = node.frontmatter[f];
+      const value = node.frontmatter[f]
       if (value) {
-        node.frontmatter[f] = tp.execute(value);
+        node.frontmatter[f] = tp.execute(value)
       }
-    });
-  });
-};
+    })
+  })
+}
